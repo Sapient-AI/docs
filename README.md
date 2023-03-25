@@ -17,6 +17,7 @@ To successfully generate the unit tests Sapient Plugin requires Junit, Mockito a
 Listed below are the steps to add these dependencies in a project.
 
 
+
 ## Junit 5 Platform
 
 - Maven 
@@ -76,26 +77,6 @@ Listed below are the steps to add these dependencies in a project.
          <version>5.2.0</version>
          <scope>test</scope>
       </dependency>
-  ```
-  
-- Gradle
-
- ``` 
-       testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.2.0'
- ```
- 
- 
- ## Mockito  
-
-- Maven 
-   
-   ```
-      <dependency>
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-core</artifactId>
-         <version>5.2.0</version>
-         <scope>test</scope>
-      </dependency>
       
       <dependency>
          <groupId>org.mockito</groupId>
@@ -112,7 +93,8 @@ Listed below are the steps to add these dependencies in a project.
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
  ```
  
- ## Hamcrest  
+ ## Hamcrest Library  
+   
 
 - Maven 
    
