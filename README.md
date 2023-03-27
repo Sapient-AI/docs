@@ -113,4 +113,16 @@ Listed below are the steps to add these dependencies in a project.
        testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
  ```
  
- 
+ ## Cyclomatic Complexity
+  
+Cyclomatic complexity of a source code section is the quantitative measure of the number of linearly independent paths in it. It is calculated by developing a Control Flow Graph of the code that measures the number of linearly-independent paths through a program module.
+
+- LOW 
+   If the count of independent paths is <= 7 then we label it as LOW in Sapient Plugin
+
+- MEDIUM
+   If the count of independent paths is > 7 and <= 10 then we label it as MEDIUM in Sapient Plugin
+
+- HIGH 
+   If the count of independent paths is > 10 then we label it as HIGH in Sapient Plugin
+
