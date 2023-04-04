@@ -102,7 +102,7 @@ Listed below are the steps to add these dependencies in a project.
       <dependency>
          <groupId>org.hamcrest</groupId>
          <artifactId>hamcrest</artifactId>
-         <version>2.2.0</version>
+         <version>2.2</version>
          <scope>test</scope>
       </dependency>
   ```
