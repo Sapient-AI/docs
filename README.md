@@ -84,6 +84,13 @@ Listed below are the steps to add these dependencies in a project.
          <version>5.2.0</version>
          <scope>test</scope>
       </dependency>
+
+        <dependency>
+         <groupId>net.bytebuddy</groupId>
+         <artifactId>byte-buddy</artifactId>
+         <version>1.14.4</version>
+         <scope>test</scope>
+      </dependency>
   ```
   
 - Gradle
@@ -91,6 +98,7 @@ Listed below are the steps to add these dependencies in a project.
  ``` 
        testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.2.0'
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
+       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
  ```
  
  ## Hamcrest Library  
