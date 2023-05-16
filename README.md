@@ -66,7 +66,7 @@ Listed below are the steps to add these dependencies in a project.
  ```
  
  
- ## Mockito Libraries
+## Mockito Libraries
 
 - Maven 
    
@@ -85,7 +85,9 @@ Listed below are the steps to add these dependencies in a project.
          <scope>test</scope>
       </dependency>
 
-        <dependency>
+      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
+        We need at least 1.12.9 -->
+      <dependency>
          <groupId>net.bytebuddy</groupId>
          <artifactId>byte-buddy</artifactId>
          <version>1.14.4</version>
@@ -98,10 +100,11 @@ Listed below are the steps to add these dependencies in a project.
  ``` 
        testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.2.0'
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
  ```
  
- ## Hamcrest Library  
+## Hamcrest Library  
    
 
 - Maven 
@@ -121,7 +124,7 @@ Listed below are the steps to add these dependencies in a project.
        testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
  ```
  
- ## Cyclomatic Complexity
+## Cyclomatic Complexity
   
 Cyclomatic complexity of a source code section is the quantitative measure of the number of linearly independent paths in it. It is calculated by developing a Control Flow Graph of the code that measures the number of linearly-independent paths through a program module.
 
@@ -134,3 +137,12 @@ Cyclomatic complexity of a source code section is the quantitative measure of th
 - HIGH 
    If the count of independent paths is > 10 then we label it as HIGH in Sapient Plugin
 
+## Troubleshooting
+
+- If you face the following issue when running the tests, please make sure you have at least byte-buddy version 1.12.9
+ ```
+    Could not initialize plugin: interface org.mockito.plugins.MockMaker
+    Caused by: org.mockito.exceptions.base.MockitoInitializationException:
+    It seems like you are running Mockito with an incomplete or inconsistent class path. Byte Buddy could not be loaded.
+    Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
+```   
