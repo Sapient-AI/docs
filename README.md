@@ -123,6 +123,27 @@ Listed below are the steps to add these dependencies in a project.
  ``` 
        testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
  ```
+
+## Java Version Requirement
+Sapient AI Test Coder supports test generation for Java Version 8 to 17. Follow below steps to update java version for:
+
+- Gradle
+ ```
+ java {
+    sourceCompatibility = JavaVersion.<VERSION>
+    targetCompatibility = JavaVersion.<VERSION>
+}
+ ```
+
+- Maven
+ ```
+<properties>
+    <maven.compiler.source><VERSION></maven.compiler.source>
+    <maven.compiler.target><VERSION></maven.compiler.target>
+  </properties>
+ ```
+
+
  
 ## Cyclomatic Complexity
   
