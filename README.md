@@ -125,7 +125,7 @@ Listed below are the steps to add these dependencies in a project.
  ```
 
 ## Java Version Requirement
-Sapient AI supports test generation for Java Version 8 through 17. To update java version for:
+Sapient AI Test Coder supports test generation for Java Version 8 through 17. To update java version for:
 
 - Gradle
  ```
