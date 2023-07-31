@@ -169,9 +169,9 @@ Cyclomatic complexity of a source code section is the quantitative measure of th
 ```   
 
 
-## Disabled Tests Due To Potential Dangerous System Calls Detected
+## Disabled Generated Tests
 
-If a method under test contains system calls, it could be potentially dangerous as it may exit, hang the thread, or possibly delete files or directories. When we detect such potential harmful system calls, we add @Disabled on the test generated, so by default it won't be executed by the system. User is advised to review the details of the test, and may remove @Disabled if he thinks the test is harmless. 
+If a method under test contains system calls, it could potentially be dangerous as it may exit the program, hang the thread, or possibly delete files or directories. When we detect such potential harmful calls, we add @Disabled on the test generated, so by default it won't be executed by the system. User is advised to review the details of the test, and may remove @Disabled if he thinks the test is harmless. 
 
 For example, the test generated may look like this:
  ```
@@ -187,9 +187,9 @@ For example, the test generated may look like this:
         assertAll("result", () -> assertThat(result, equalTo("!")));
     }
  ```
-In this case, AI Sapient detects that System.exit is called inside myMethod when true is passed as parameter.
+In this case, AI Sapient detects that System.exit is called inside myMethod when true is passed as argument.
 
-The following Java functions are considered potentially dangerous, and if detected @Disabled will be added to the test.
+The following Java functions are considered potentially dangerous, and if detected during test generation, @Disabled will be added to the test.
 
 - Regular Functions:
 	- java.lang.Runtime: exec, exit, halt, wait
