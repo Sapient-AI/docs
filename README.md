@@ -167,3 +167,44 @@ Cyclomatic complexity of a source code section is the quantitative measure of th
     It seems like you are running Mockito with an incomplete or inconsistent class path. Byte Buddy could not be loaded.
     Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
 ```   
+
+
+## Disabled Tests Due To Potential Dangerous System Calls Detected
+
+If a method under test contains system calls, it could be potentially dangerous as it may exit, hang the thread, or possibly delete files or directories. When we detect such potential harmful system calls, we add @Disabled on the test generated, so by default it won't be executed by the system. User is advised to review the details of the test, and may remove @Disabled if he thinks the test is harmless. 
+
+For example, the test generated may look like this:
+ ```
+    //Sapient generated method id: ${3f698e62-d52c-38cd-bce6-39784a59918a}
+    @Disabled(value = "Potential harmful system call (System.exit) detected; Learn more: https://github.com/Sapient-AI/docs#disabled-test-due-to")
+    @Test()
+    void myMethodWhenParam() {
+        /* Branches:
+         * (param) : true
+         */
+        TestSystemExit target = new TestSystemExit();
+        String result = target.myMethod(true);
+        assertAll("result", () -> assertThat(result, equalTo("!")));
+    }
+ ```
+In this case, AI Sapient detects that System.exit is called inside myMethod when true is passed as parameter.
+
+The following Java functions are considered potentially dangerous, and if detected @Disabled will be added to the test.
+
+- Regular Functions:
+	- java.lang.Runtime: exec, exit, halt, wait
+	- java.lang.Thread: destroy, interrupt, run, start, stop, suspend, wait
+	- java.net.ServerSocket: accept, bind
+	- java.nio.channels.Selector: (all functions)
+	- java.util.concurrent.CompletableFuture: complete, completeAsync
+	- java.util.concurrent.CountDownLatch: await, countDown
+	- java.util.concurrent.CyclicBarrier: await
+	- java.util.concurrent.ExecutorService: awaitTermination, invokeAll, invokeAny, shutdown, shutdownNow, submit
+	- java.util.concurrent.Future: get
+
+- Static Functions:
+	- java.nio.file.Files: delete, deleteIfExists
+	- java.lang.System: exit
+
+
+
