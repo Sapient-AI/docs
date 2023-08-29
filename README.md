@@ -206,5 +206,19 @@ The following Java functions are considered potentially dangerous, and if detect
 	- java.nio.file.Files: delete, deleteIfExists
 	- java.lang.System: exit
 
+## Batch Generation
+
+### Main Method
+
+Main method is used to launch Java application, start server or setup infrastructure elements, so it has been excluded from unit testing.
+
+### Getters and Setters Methods
+
+Getters and Setters are standard methods used to maintain the state in a Java class. These are devoid of programming complexity, so they have been excluded from unit testing.
+
+### Equals, hashCode, wait, notify, waitAll, notifyAll etc.
+
+Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll etc. are excluded from unit testing.
+
 
 
