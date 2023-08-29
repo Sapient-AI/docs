@@ -107,7 +107,7 @@ Listed below are the steps to add these dependencies in a project.
 - {$mockito.version} :
   ```
   	For JDK 8 : 4.x (recommended 4.11.0)
-	For JDK 11 and Above : 5.x (recommended 5.2.0)
+		For JDK 11 and Above : 5.x (recommended 5.2.0)
   ```
   
 ## Hamcrest Library  
