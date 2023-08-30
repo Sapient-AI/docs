@@ -66,7 +66,45 @@ Listed below are the steps to add these dependencies in a project.
  ```
  
  
-## Mockito Libraries
+## Mockito Libraries ( JDK 8 : 4.x (recommended 4.11.0) )
+
+- Maven 
+   
+   ```
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-core</artifactId>
+         <version>4.11.0</version>
+         <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-inline</artifactId>
+         <version>4.11.0</version>
+         <scope>test</scope>
+      </dependency>
+
+      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
+        We need at least 1.12.9 -->
+      <dependency>
+         <groupId>net.bytebuddy</groupId>
+         <artifactId>byte-buddy</artifactId>
+         <version>1.14.4</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+  
+- Gradle
+
+ ``` 
+       testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
+       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '4.11.0'
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
+ ```
+
+## Mockito Libraries ( JDK 11 and Above : 5.x (recommended 5.2.0) )
 
 - Maven 
    
@@ -103,7 +141,7 @@ Listed below are the steps to add these dependencies in a project.
        // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
  ```
- 
+  
 ## Hamcrest Library  
    
 
