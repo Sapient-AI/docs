@@ -162,6 +162,12 @@ Listed below are the steps to add these dependencies in a project.
        testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
  ```
 
+## OS Libraries
+
+- Linux
+
+Sapient AI Test Coder requires gcc to be installed on linux before using the plugin.
+
 ## Java Version Requirement
 Sapient AI Test Coder supports test generation for Java Version 8 to 17. Follow below steps to update java version for:
 
