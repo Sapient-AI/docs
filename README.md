@@ -31,9 +31,9 @@ Listed below are the steps to add these dependencies in a project.
       </dependency>
       
        <dependency>
-         <groupId>org.junit.platform</groupId>
-         <artifactId>junit-platform-launcher</artifactId>
-         <version>1.9.2</version>
+         <groupId>org.junit.jupiter</groupId>
+         <artifactId>junit-jupiter-engine</artifactId>
+         <version>5.9.2</version>
          <scope>test</scope>
       </dependency>
   ```
@@ -42,7 +42,7 @@ Listed below are the steps to add these dependencies in a project.
 
  ``` 
        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
-       testImplementation group: 'org.junit.platform', name: 'junit-platform-launcher', version: '1.9.2'
+       testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
  ```
  
  
