@@ -50,7 +50,7 @@ JUnit Vintage Engine: The engine that runs tests written in JUnit 3 and JUnit 4 
 
  ``` 
        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
-       testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
+       testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
  ```
 
 ### JUnit Jupiter Engine 
@@ -95,7 +95,7 @@ To use the new junit platform to run junit 4 tests its required to add junit vin
 - Gradle
 
  ``` 
-      testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.2'
+      testRuntimeOnly group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.2'
  ```
  
 ## Mockito Libraries ( JDK 8 : 4.x (recommended 4.11.0) )
