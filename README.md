@@ -16,7 +16,15 @@ To successfully generate the unit tests Sapient Plugin requires Junit, Mockito a
 
 Listed below are the steps to add these dependencies in a project.
 
+## Junit Platform
 
+JUnit 5 introduced the concept of the JUnit Platform, which is a new foundation for running testing frameworks on the Java Virtual Machine (JVM). The JUnit Platform provides an execution environment for running tests and supports the creation of new testing frameworks. The JUnit Platform also introduced the concept of the JUnit Platform Launcher, which is responsible for discovering and executing tests on the platform.
+
+The JUnit Platform supports different testing frameworks, and the term "engine" is often used to describe the individual components responsible for running tests written in a particular framework. For example:
+
+JUnit Jupiter Engine: The engine that runs tests written using the JUnit Jupiter programming model.
+
+JUnit Vintage Engine: The engine that runs tests written in JUnit 3 and JUnit 4 style.
 
 ## Junit 5 Platform
 
@@ -42,9 +50,12 @@ Listed below are the steps to add these dependencies in a project.
 
  ``` 
        testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.2'
-       testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
+       testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
  ```
- 
+
+### JUnit Jupiter Engine 
+
+It's required to add junit jupiter engine as dependency to run junit 5 tests, like described above.
  
 ## Junit 4 Platform
 
@@ -64,7 +75,28 @@ Listed below are the steps to add these dependencies in a project.
  ``` 
        testImplementation group: 'junit', name: 'junit', version: '4.13.2'
  ```
- 
+
+### JUnit Vintage Engine 
+
+To use the new junit platform to run junit 4 tests its required to add junit vintage engine as a project dependency.
+
+- Maven 
+   
+   ```
+	<dependency>
+	    <groupId>org.junit.vintage</groupId>
+	    <artifactId>junit-vintage-engine</artifactId>
+	    <version>5.9.2</version>
+	    <scope>test</scope>
+	</dependency>
+
+  ```
+  
+- Gradle
+
+ ``` 
+      testImplementation group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.2'
+ ```
  
 ## Mockito Libraries ( JDK 8 : 4.x (recommended 4.11.0) )
 
