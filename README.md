@@ -303,11 +303,11 @@ Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll
 Intellij runs over JetBrains Runtime (JRE), that was designed to be a high-performance runtime environment for running JetBrains IDEs and other Java-based applications. It is optimized for the specific needs of JetBrains products.
 
 Some Intellij users experienced JVM crashs when using Intellij 2023.3 with Jetbrains 17 + JCFE, that is the default option when you install a Intellij version. 
-[https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader](IDEA-340379)
+[IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader)
 
 Jetbrains already fixed the bug, but it is planned to be released in the first version of 2024 release. 
 
-Until there, we advice our user to change the JRE where Intellij runs from the version with JCFE to the vanilla version. [https://www.jetbrains.com/help/idea/switching-boot-jdk.html](Learn how to change JRE of Intellij)
+Until there, we advice our user to change the JRE where Intellij runs from the version with JCFE to the vanilla version. [Learn how to change JRE of Intellij](https://www.jetbrains.com/help/idea/switching-boot-jdk.html)
 
 When you access the dialog "Choose Boot Runtime for the IDE", just search between the options in "New:" field and select the option that have the description "Jetbrains Runtime JBR (vanilla)" (the most recent one).
 
