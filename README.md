@@ -1,10 +1,10 @@
 # Sapient AI
 
-- Sapient AI is Test Authoring as a Service which allow developers to focus on business requirements instead of tedious task of writing test codes.   
+- Sapient.ai is an advanced AI-driven platform that transforms the landscape of software development through automated unit test generation. Its main features include exceptional code integrity assurance, fast and responsive test generation, and personalized code feedback to improve overall code quality. For software engineers, it expedites the development cycle, enhances code reliability, and offers valuable insights for code refinement.   
 
 - Website: [https://www.sapient.ai](http://sapient.ai/)
 
-<img alt="SapientAI" src="https://storage.googleapis.com/sapient-images/Sapient%20with%20wordmark%20-%20azure%20oxfordblue.png">
+<img alt="SapientAI" width="200" height="auto" src="https://assets-global.website-files.com/644c54b9f870d8f15c27f21a/650a35c8f6932ac72a30ccba_Sapient-Horizontal-1-p-500.png"> <h1>Sapient.ai</h1></img>
 
 
 
