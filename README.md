@@ -298,18 +298,25 @@ Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll
 
 ## Environment 
 
-### Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
-
 Intellij runs over JetBrains Runtime (JRE), that was designed to be a high-performance runtime environment for running JetBrains IDEs and other Java-based applications. It is optimized for the specific needs of JetBrains products.
 
-Some Intellij users experienced JVM crashs when using Intellij 2023.3 with Jetbrains 17 + JCFE, that is the default option when you install a Intellij version. 
-[IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader)
+### Supporting projects with a java version greather than 17
 
-Jetbrains already fixed the bug, but it is planned to be released in the first version of 2024 release. 
+The current default version of IntelliJ (2023.3) operates on JBR 17. Since the Sapient plugin is integrated with IntelliJ, we are committed to supporting projects using Java 17 or older. However, IntelliJ provides the flexibility to change the JBR version it runs on, allowing you to switch from 17 to 21. By doing so, you'll gain the ability to use Sapient with more recent Java versions.
 
-Until there, we advice our user to change the JRE where Intellij runs from the version with JCFE to the vanilla version. [Learn how to change JRE of Intellij](https://www.jetbrains.com/help/idea/switching-boot-jdk.html)
+To learn how to change the JBR of IntelliJ, refer to the [official guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html).
 
-When you access the dialog "Choose Boot Runtime for the IDE", just search between the options in "New:" field and select the option that have the description "Jetbrains Runtime JBR (vanilla)" (the most recent one).
+When you access the "Choose Boot Runtime for the IDE" dialog, simply navigate to the "New:" field, search among the options, and select the one with "21" in the description. This will enable you to use Sapient with Java versions beyond 17.
+
+### Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
+
+Some IntelliJ users encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version. The issue is documented in [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
+
+JetBrains has already addressed the bug, and the fix is scheduled to be released in the first version of the 2024 release.
+
+Until then, we recommend our users to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Refer to this [guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) for instructions on how to change the JRE in IntelliJ.
+
+When you access the "Choose Boot Runtime for the IDE" dialog, search in the "New:" field among the options and select the one with the description "JetBrains Runtime JBR (vanilla)" (the most recent version). This adjustment should help mitigate the JVM crash issue until the official fix is released.
 
 
 
