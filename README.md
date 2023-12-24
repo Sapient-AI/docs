@@ -10,13 +10,15 @@
 
 ## Libraries required by Sapient Plugin
 
-As of today Sapient supports unit test generation for Junit 5 and Junit 4 platform.
+In order to ensure successful test generation, the Sapient Plugin mandates the presence of JUnit, Mockito, and Hamcrest libraries as dependencies in the source project.
 
-To successfully generate the unit tests Sapient Plugin requires Junit, Mockito and Hamcrest libraries to be present as dependency of the source project.
-
-Listed below are the steps to add these dependencies in a project.
+Below are the steps to seamlessly integrate these dependencies into your project:
 
 ## Junit Platform
+
+Sapient facilitates unit test generation across JUnit 5, JUnit 4, or TestNG platforms. The tool automatically identifies the JUnit version by inspecting the unit testing libraries declared in the project. If the project doesn't currently employ any unit testing libraries, it's necessary to include one of these libraries to enable seamless integration with Sapient. If the project contains multiple JUnit libraries (e.g., JUnit 4 and TestNG), users have the option to set their preferred platform in the settings.
+
+
 
 JUnit 5 introduced the concept of the JUnit Platform, which is a new foundation for running testing frameworks on the Java Virtual Machine (JVM). The JUnit Platform provides an execution environment for running tests and supports the creation of new testing frameworks. The JUnit Platform also introduced the concept of the JUnit Platform Launcher, which is responsible for discovering and executing tests on the platform.
 
@@ -27,6 +29,7 @@ JUnit Jupiter Engine: The engine that runs tests written using the JUnit Jupiter
 JUnit Vintage Engine: The engine that runs tests written in JUnit 3 and JUnit 4 style.
 
 ## Junit 5 Platform
+Sapient utilizes the JUnit Jupiter programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 5 libraries have been included in the project. Following dependencies can be included for JUnit 5:
 
 - Maven 
    
@@ -53,11 +56,10 @@ JUnit Vintage Engine: The engine that runs tests written in JUnit 3 and JUnit 4 
        testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.9.2'
  ```
 
-### JUnit Jupiter Engine 
-
-It's required to add junit jupiter engine as dependency to run junit 5 tests, like described above.
  
 ## Junit 4 Platform
+
+Sapient utilizes the JUnit 4 Vintage programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 4 libraries have been included in the project. Following dependencies can be included for JUnit 4:
 
 - Maven 
    
@@ -76,67 +78,9 @@ It's required to add junit jupiter engine as dependency to run junit 5 tests, li
        testImplementation group: 'junit', name: 'junit', version: '4.13.2'
  ```
 
-### JUnit Vintage Engine 
-
-To use the new junit platform to run junit 4 tests its required to add junit vintage engine as a project dependency.
-
-- Maven 
-   
-   ```
-	<dependency>
-	    <groupId>org.junit.vintage</groupId>
-	    <artifactId>junit-vintage-engine</artifactId>
-	    <version>5.9.2</version>
-	    <scope>test</scope>
-	</dependency>
-
-  ```
-  
-- Gradle
-
- ``` 
-      testRuntimeOnly group: 'org.junit.vintage', name: 'junit-vintage-engine', version: '5.9.2'
- ```
- 
-## Mockito Libraries ( JDK 8 : 4.x (recommended 4.11.0) )
-
-- Maven 
-   
-   ```
-      <dependency>
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-core</artifactId>
-         <version>4.11.0</version>
-         <scope>test</scope>
-      </dependency>
-      
-      <dependency>
-         <groupId>org.mockito</groupId>
-         <artifactId>mockito-inline</artifactId>
-         <version>4.11.0</version>
-         <scope>test</scope>
-      </dependency>
-
-      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
-        We need at least 1.12.9 -->
-      <dependency>
-         <groupId>net.bytebuddy</groupId>
-         <artifactId>byte-buddy</artifactId>
-         <version>1.14.4</version>
-         <scope>test</scope>
-      </dependency>
-  ```
-  
-- Gradle
-
- ``` 
-       testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
-       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '4.11.0'
-       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
-       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
- ```
-
 ## Mockito Libraries ( JDK 11 and Above : 5.x (recommended 5.2.0) )
+
+Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 11 or newer versions, it is recommended to use Mockito version 5.x or later.
 
 - Maven 
    
@@ -174,8 +118,49 @@ To use the new junit platform to run junit 4 tests its required to add junit vin
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
  ```
   
-## Hamcrest Library  
+
+## Mockito Libraries ( JDK 8 : 4.x (recommended 4.11.0) )
+
+Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 8 version, it is recommended to use Mockito version 4.x or older.
+- Maven 
    
+   ```
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-core</artifactId>
+         <version>4.11.0</version>
+         <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-inline</artifactId>
+         <version>4.11.0</version>
+         <scope>test</scope>
+      </dependency>
+
+      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
+        We need at least 1.12.9 -->
+      <dependency>
+         <groupId>net.bytebuddy</groupId>
+         <artifactId>byte-buddy</artifactId>
+         <version>1.14.4</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+  
+- Gradle
+
+ ``` 
+       testImplementation group: 'org.mockito', name: 'mockito-core', version: '4.11.0'
+       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '4.11.0'
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
+ ```
+
+
+## Hamcrest Library  
+It brings substantial enhancements in terms of readability, expressiveness, composability, and error message reporting. For a detailed exploration of these advantages, you can refer to our blog post at: [Understanding Hamcrest: Advantages and Disadvantages for Java Testing](https://www.sapient.ai/blog/understanding-hamcrest-advantages-and-disadvantages-for-java-testing).
 
 - Maven 
    
@@ -201,7 +186,16 @@ To use the new junit platform to run junit 4 tests its required to add junit vin
 Sapient AI Test Coder requires gcc to be installed on linux before using the plugin.
 
 ## Java Version Requirement
-Sapient AI Test Coder supports test generation for Java Version 8 to 17. Follow below steps to update java version for:
+Sapient supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
+
+### Supporting projects with a java version 18 or later
+The current IntelliJ version (2023.3) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. Please consult the official guide to change the default Java version for IntelliJ boot-up.
+
+Upon accessing the 'Choose Boot Runtime for the IDE' dialog, navigate to the 'New:' field, search among the options, and select the respective version from the description. This will enable seamless usage of Sapient with Java 18 or later versions.
+
+### Fixing Java Version
+
+Following steps are required to fix the java version in the project:
 
 - Gradle
  ```
@@ -219,35 +213,24 @@ Sapient AI Test Coder supports test generation for Java Version 8 to 17. Follow 
   </properties>
  ```
 
-
  
 ## Cyclomatic Complexity
   
-Cyclomatic complexity of a source code section is the quantitative measure of the number of linearly independent paths in it. It is calculated by developing a Control Flow Graph of the code that measures the number of linearly-independent paths through a program module.
+The cyclomatic complexity of a section of source code is a quantitative measure indicating the number of linearly independent paths within it. This metric is derived by constructing a Control Flow Graph of the code, effectively quantifying the number of linearly independent paths through a given program module. It's labeled as LOW, MEDIUM or HIGH based on number of independent paths.
 
 - LOW 
-   If the count of independent paths is <= 7 then we label it as LOW in Sapient Plugin
+   No. of independent paths is less than or equal to 7.
 
 - MEDIUM
-   If the count of independent paths is > 7 and <= 10 then we label it as MEDIUM in Sapient Plugin
+   No. of independent paths is between 7 and 10.
 
 - HIGH 
-   If the count of independent paths is > 10 then we label it as HIGH in Sapient Plugin
-
-## Troubleshooting
-
-- If you face the following issue when running the tests, please make sure you have at least byte-buddy version 1.12.9
- ```
-    Could not initialize plugin: interface org.mockito.plugins.MockMaker
-    Caused by: org.mockito.exceptions.base.MockitoInitializationException:
-    It seems like you are running Mockito with an incomplete or inconsistent class path. Byte Buddy could not be loaded.
-    Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
-```   
+   No. of independent paths is greater than 10.
 
 
 ## Disabled Generated Tests
 
-If a method under test contains system calls, it could potentially be dangerous as it may exit the program, hang the thread, or possibly delete files or directories. When we detect such potential harmful calls, we add @Disabled on the test generated, so by default it won't be executed by the system. User is advised to review the details of the test, and may remove @Disabled if he thinks the test is harmless. 
+When a method under test involves system calls, there's a potential for adverse effects such as program termination, thread hang, or file/directory deletion. To mitigate risks, we identify and flag such potentially harmful calls by adding @Disabled to the generated test. By default, these tests won't be executed. Users are encouraged to review test details and may choose to remove @Disabled if they determine the test is safe.
 
 For example, the test generated may look like this:
  ```
@@ -263,7 +246,7 @@ For example, the test generated may look like this:
         assertAll("result", () -> assertThat(result, equalTo("!")));
     }
  ```
-In this case, AI Sapient detects that System.exit is called inside myMethod when true is passed as argument.
+
 
 The following Java functions are considered potentially dangerous, and if detected during test generation, @Disabled will be added to the test.
 
@@ -283,6 +266,8 @@ The following Java functions are considered potentially dangerous, and if detect
 	- java.lang.System: exit
 
 ## Batch Generation
+Sapient offers a robust feature enabling the specification of one or multiple source folders for unit test code generation. These folders yield numerous classes, each of which is meticulously analyzed and processed to generate test code. Sapient methodically examines every method within these classes, compiling a comprehensive list of test cases and associating them with their respective test methods. Notably, certain methods, such as main methods for launching applications or getters/setters for data access, are purposefully excluded. This ensures that unit test code generation remains focused on functional code and avoids unnecessary code sprawl.
+
 
 ### Main Method
 
@@ -296,27 +281,22 @@ Getters and Setters are standard methods used to maintain the state in a Java cl
 
 Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll etc. are excluded from unit testing.
 
-## Environment 
 
-Intellij runs over JetBrains Runtime (JRE), that was designed to be a high-performance runtime environment for running JetBrains IDEs and other Java-based applications. It is optimized for the specific needs of JetBrains products.
+## Troubleshooting
 
-### Supporting projects with a java version greather than 17
+- If you face the following issue when running the tests, please make sure the version of  byte-buddy is 1.12.9 or later
+ ```
+    Could not initialize plugin: interface org.mockito.plugins.MockMaker
+    Caused by: org.mockito.exceptions.base.MockitoInitializationException:
+    It seems like you are running Mockito with an incomplete or inconsistent class path. Byte Buddy could not be loaded.
+    Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
+```   
 
-The current default version of IntelliJ (2023.3) operates on JBR 17. Since the Sapient plugin is integrated with IntelliJ, we are committed to supporting projects using Java 17 or older. However, IntelliJ provides the flexibility to change the JBR version it runs on, allowing you to switch from 17 to 21. By doing so, you'll gain the ability to use Sapient with more recent Java versions.
+- Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
 
-To learn how to change the JBR of IntelliJ, refer to the [official guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html).
+Some IntelliJ users have encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version, as reported here [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
 
-When you access the "Choose Boot Runtime for the IDE" dialog, simply navigate to the "New:" field, search among the options, and select the one with "21" in the description. This will enable you to use Sapient with Java versions beyond 17.
-
-### Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
-
-Some IntelliJ users encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version. The issue is documented in [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
-
-JetBrains has already addressed the bug, and the fix is scheduled to be released in the first version of the 2024 release.
-
-Until then, we recommend our users to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Refer to this [guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) for instructions on how to change the JRE in IntelliJ.
+JetBrains has already acknowledged and scheduled to release the fix in the 2024 release. Till then, users are recommended to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Please refer to this [guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) for instructions on how to change the JRE in IntelliJ.
 
 When you access the "Choose Boot Runtime for the IDE" dialog, search in the "New:" field among the options and select the one with the description "JetBrains Runtime JBR (vanilla)" (the most recent version). This adjustment should help mitigate the JVM crash issue until the official fix is released.
-
-
 
