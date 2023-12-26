@@ -189,7 +189,7 @@ Sapient AI Test Coder requires gcc to be installed on linux before using the plu
 Sapient supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
 
 ### Supporting projects with a java version 18 or later
-The current IntelliJ version (2023.3) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. Please consult the official guide to change the default Java version for IntelliJ boot-up.
+The current IntelliJ version (2023.3) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. Please consult the [official guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) to change the default Java version for IntelliJ boot-up.
 
 Upon accessing the 'Choose Boot Runtime for the IDE' dialog, navigate to the 'New:' field, search among the options, and select the respective version from the description. This will enable seamless usage of Sapient with Java 18 or later versions.
 
