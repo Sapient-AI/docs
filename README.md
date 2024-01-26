@@ -296,7 +296,9 @@ If you face the following issue when running the tests, please make sure the ver
 
 Some IntelliJ users have encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version, as reported here [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
 
-JetBrains has already acknowledged and scheduled to release the fix in the 2024 release. Till then, users are recommended to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Please refer to this [guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) for instructions on how to change the JRE in IntelliJ.
+JetBrains has already acknowledged and scheduled to release the fix in the 2024 release. Till then, users are recommended to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Please refer to Intellij guide for instructions on how to change the JRE in IntelliJ.
+
+[Access the official IntelliJ Guide by clicking here.](https://www.jetbrains.com/help/idea/switching-boot-jdk.html)
 
 When you access the "Choose Boot Runtime for the IDE" dialog, search in the "New:" field among the options and select the one with the description "JetBrains Runtime JBR (vanilla)" (the most recent version). This adjustment should help mitigate the JVM crash issue until the official fix is released.
 
