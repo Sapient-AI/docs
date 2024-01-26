@@ -284,7 +284,7 @@ Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll
 
 ## Troubleshooting
 
-- If you face the following issue when running the tests, please make sure the version of  byte-buddy is 1.12.9 or later
+### If you face the following issue when running the tests, please make sure the version of  byte-buddy is 1.12.9 or later
  ```
     Could not initialize plugin: interface org.mockito.plugins.MockMaker
     Caused by: org.mockito.exceptions.base.MockitoInitializationException:
@@ -292,7 +292,7 @@ Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll
     Byte Buddy is available on Maven Central as 'net.bytebuddy:byte-buddy' with the module name 'net.bytebuddy'.
 ```   
 
-- Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
+### Crashing Intellij build version 233 (2023.3) and Jetbrains Runtime 17 with JCFE
 
 Some IntelliJ users have encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version, as reported here [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
 
