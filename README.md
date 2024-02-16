@@ -78,9 +78,49 @@ Sapient utilizes the JUnit 4 Vintage programming model for test code generation 
        testImplementation group: 'junit', name: 'junit', version: '4.13.2'
  ```
 
-## Mockito Libraries ( JDK 11 and Above : 5.x (recommended 5.2.0) )
+## Mockito Libraries ( JDK 11 and Above : 5.x)
 
 Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 11 or newer versions, it is recommended to use Mockito version 5.x or later.
+
+For JDK 21 (recommended mockito version 5.7.0)
+
+- Maven
+
+   ```
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-core</artifactId>
+         <version>5.7.0</version>
+         <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-inline</artifactId>
+         <version>5.7.0</version>
+         <scope>test</scope>
+      </dependency>
+
+      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
+        We need at least 1.12.9 -->
+      <dependency>
+         <groupId>net.bytebuddy</groupId>
+         <artifactId>byte-buddy</artifactId>
+         <version>1.14.4</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+
+- Gradle
+
+ ``` 
+       testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.7.0'
+       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.7.0'
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
+ ```
+
+For JDK 11 to JDK 20  (recommended mockito version 5.2.0)
 
 - Maven 
    
@@ -189,9 +229,21 @@ Sapient AI Test Coder requires gcc to be installed on linux before using the plu
 Sapient supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
 
 ### Supporting projects with a java version 18 or later
-The current IntelliJ version (2023.3) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. Please consult the [official guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) to change the default Java version for IntelliJ boot-up.
+The current IntelliJ version (2023.3) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. 
 
-Upon accessing the 'Choose Boot Runtime for the IDE' dialog, navigate to the 'New:' field, search among the options, and select the respective version from the description. This will enable seamless usage of Sapient with Java 18 or later versions.
+Please follow below instructions to update the Java Runtime in IntelliJ.
+
+	- In the main menu, go to Help | Find Action
+	- Find and select the Choose Boot Java Runtime for the IDE action.
+	- Select the new desired runtime ex: JetBrains Runtime JBR (vanilla).
+	- Click OK.
+	- If necessary, you can change the location where IntelliJ IDEA will download the selected runtime.
+	- Wait for IntelliJ IDEA to restart with the new runtime.
+	- This adjustment should help mitigate the JVM crash issue until the official fix is released.
+
+![alt text](https://github.com/Sapient-AI/docs/blob/main/images/choose-boot-java-runtime-for-ide.png?raw=true)
+
+Intellij's Official documentation available here [official guide](https://www.jetbrains.com/help/idea/switching-boot-jdk.html) to change the default Java version for IntelliJ boot-up.
 
 ### Fixing Java Version
 
@@ -296,9 +348,7 @@ If you face the following issue when running the tests, please make sure the ver
 
 Some IntelliJ users have encountered JVM crashes when using IntelliJ 2023.3 with JetBrains 17 and JCFE, which is the default option upon installing an IntelliJ version, as reported here [IDEA-340379](https://youtrack.jetbrains.com/issue/IDEA-340379/JVM-crash-after-IDE-upgrade-with-shared-indexes-SIGSEGV-in-AppendOnlyLogOverMMappedFileRecordLayout.readHeader).
 
-JetBrains has already acknowledged and scheduled to release the fix in the 2024 release. Till then, users are recommended to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. Please refer to Intellij guide for instructions on how to change the JRE in IntelliJ.
+JetBrains has already acknowledged and scheduled to release the fix in the 2024 release. Till then, users are recommended to change the JRE that IntelliJ uses from the version with JCFE to the vanilla version. 
 
-[Access the official IntelliJ Guide by clicking here.](https://www.jetbrains.com/help/idea/switching-boot-jdk.html)
-
-When you access the "Choose Boot Runtime for the IDE" dialog, search in the "New:" field among the options and select the one with the description "JetBrains Runtime JBR (vanilla)" (the most recent version). This adjustment should help mitigate the JVM crash issue until the official fix is released.
+Please refer to instructions mentioned in section [Supporting projects with a java version 18 or later](#Supporting-projects-with-a-java-version-18-or-later)
 
