@@ -336,9 +336,9 @@ Common object methods such as equals, hashCode, wait, notify, waitAll, notifyAll
 
 ## Troubleshooting
 
-### Byt buddy minimal version (1.12.9)
+### Byte buddy minimal version
 
-If you face the following issue when running the tests, please make sure the version of  byte-buddy is 1.12.9 or later
+If you face the following issue when running the tests, please make sure the version of  byte-buddy is **1.12.9** or later
  ```
     Could not initialize plugin: interface org.mockito.plugins.MockMaker
     Caused by: org.mockito.exceptions.base.MockitoInitializationException:
