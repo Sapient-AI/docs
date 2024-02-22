@@ -97,7 +97,7 @@ For JDK 21 (recommended mockito version 5.7.0)
       <dependency>
          <groupId>org.mockito</groupId>
          <artifactId>mockito-inline</artifactId>
-         <version>5.7.0</version>
+         <version>5.2.0</version>
          <scope>test</scope>
       </dependency>
 
