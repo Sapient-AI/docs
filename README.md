@@ -115,7 +115,7 @@ For JDK 21 (recommended mockito version 5.7.0)
 
  ``` 
        testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.7.0'
-       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.7.0'
+       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'
        // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.4'
  ```
