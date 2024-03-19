@@ -78,6 +78,27 @@ Sapient utilizes the JUnit 4 Vintage programming model for test code generation 
        testImplementation group: 'junit', name: 'junit', version: '4.13.2'
  ```
 
+## TestNG Platform
+
+Sapient utilizes the TestNG programming model for test code generation and employs the respective engine to execute and validate the tests if TestNG libraries have been included in the project. Following dependencies can be included for TestNG:
+
+- Maven
+
+   ```
+      <dependency>
+         <groupId>org.testng</groupId>
+         <artifactId>testng</artifactId>
+         <version>7.9.0</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+
+- Gradle
+
+ ``` 
+       testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
+ ```
+
 ## Mockito Libraries ( JDK 11 and Above : 5.x)
 
 Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 11 or newer versions, it is recommended to use Mockito version 5.x or later.
