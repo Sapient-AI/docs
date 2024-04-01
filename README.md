@@ -375,3 +375,10 @@ JetBrains has already acknowledged and scheduled to release the fix in the 2024 
 
 Please refer to instructions mentioned in section [Supporting projects with a java version 18 or later](#Supporting-projects-with-a-java-version-18-or-later)
 
+### Unable to update build.gradle/build.gradle.kts/pom.xml
+
+In case of a message like `Unable to update build.gradle.kts. Please update with these instructions` we are usually not able to find the build files because of: 
+- Either it is missing in the package.
+- It is renamed.
+To resolve it please follow along the doc to add these dependencies to your build file. After a successful sync, the plugin will start generating tests for your repository. 
+
