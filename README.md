@@ -80,8 +80,9 @@ Sapient utilizes the JUnit 4 Vintage programming model for test code generation 
 
 ## TestNG Platform
 
-Sapient utilizes the TestNG programming model for test code generation and employs the respective engine to execute and validate the tests if TestNG libraries have been included in the project. Following dependencies can be included for TestNG:
+Sapient utilizes the TestNG programming model for test code generation and employs the respective engine to execute and validate the tests if TestNG libraries have been included in the project.
 
+For Java version 11 and higher:
 - Maven
 
    ```
@@ -95,9 +96,26 @@ Sapient utilizes the TestNG programming model for test code generation and emplo
 
 - Gradle
 
- ``` 
+	``` 
        testImplementation group: 'org.testng', name: 'testng', version: '7.9.0'
- ```
+	```
+For Java Versions less than 11
+- Maven
+
+   ```
+      <dependency>
+         <groupId>org.testng</groupId>
+         <artifactId>testng</artifactId>
+         <version>7.5</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+
+- Gradle
+	
+	``` 
+       testImplementation group: 'org.testng', name: 'testng', version: '7.5'
+	```
 
 ## Mockito Libraries ( JDK 11 and Above : 5.x)
 
