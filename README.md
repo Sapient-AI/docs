@@ -264,8 +264,8 @@ It brings substantial enhancements in terms of readability, expressiveness, comp
 
 Sapient AI Test Coder requires libgcc and libstdc++6 to be installed on linux before using the plugin. Please make sure these two packages are installed in your machine. For Ubuntu distribution you could install executing the following commands: 
  ``` 
-       sudo apt install libstdc++6
        sudo apt install libgcc-s1
+       sudo apt install libstdc++6
  ```
 
 ## Java Version Requirement
