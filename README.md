@@ -262,7 +262,11 @@ It brings substantial enhancements in terms of readability, expressiveness, comp
 
 - Linux
 
-Sapient AI Test Coder requires gcc to be installed on linux before using the plugin.
+Sapient AI Test Coder requires libgcc and libstdc++6 to be installed on linux before using the plugin. Please make sure these two packages are installed in your machine. For Ubuntu distribution you could install executing the following commands: 
+ ``` 
+       sudo apt install libstdc++6
+       sudo apt install libgcc-s1
+ ```
 
 ## Java Version Requirement
 Sapient supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
