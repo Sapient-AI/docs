@@ -121,7 +121,7 @@ For Java Versions less than 11
 
 Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 11 or newer versions, it is recommended to use Mockito version 5.x or later.
 
-For JDK 21 (recommended mockito version 5.7.0, we need byte-buddy that is at 1.14.9 and not 1.14.0 so we exclude the byte-buddy that is shipped with mockito-inline)
+For JDK 21 (recommended mockito version 5.7.0, we need byte-buddy that is equal to or above 1.14.9 and so we exclude the byte-buddy that is shipped with mockito-inline)
 
 - Maven
 
