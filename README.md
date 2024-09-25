@@ -121,9 +121,10 @@ For Java Versions less than 11
 
 Mockito is a library designed for creating mocks and stubs of objects, enabling isolation across logical layers in the code. To ensure compatibility with Java 11 or newer versions, it is recommended to use Mockito version 5.x or later.
 
-For JDK 21 (recommended mockito version 5.7.0, we need byte-buddy that is equal to or above 1.14.9 and so we exclude the byte-buddy that is shipped with mockito-inline)
+For JDK 21, 22 (recommended mockito version 5.7.0, we need byte-buddy that is equal to or above 1.14.9 and so we exclude the byte-buddy that is shipped with mockito-inline)
+For JDK 23 (recommended mockito version 5.7.0, we need byte-buddy that is equal to or above 1.14.16 and so we exclude the byte-buddy that is shipped with mockito-inline)
 
-- Maven
+- Maven for JDK 23
 
    ```
       <dependency>
@@ -147,7 +148,40 @@ For JDK 21 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
       </dependency>
 
       <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
-        We need at least 1.12.9 -->
+        We need at least 1.14.16 -->
+      <dependency>
+         <groupId>net.bytebuddy</groupId>
+         <artifactId>byte-buddy</artifactId>
+         <version>1.14.16</version>
+         <scope>test</scope>
+      </dependency>
+  ```
+
+- Maven for JDK 21, 22
+
+   ```
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-core</artifactId>
+         <version>5.7.0</version>
+         <scope>test</scope>
+      </dependency>
+      
+      <dependency>
+         <groupId>org.mockito</groupId>
+         <artifactId>mockito-inline</artifactId>
+         <version>5.2.0</version>
+         <scope>test</scope>
+    	 <exclusions>
+            <exclusion>
+               <groupId>net.bytebuddy</groupId>
+               <artifactId>byte-buddy</artifactId>
+            </exclusion>
+    	 </exclusions>
+      </dependency>
+
+      <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
+        We need at least 1.14.9 -->
       <dependency>
          <groupId>net.bytebuddy</groupId>
          <artifactId>byte-buddy</artifactId>
@@ -156,14 +190,25 @@ For JDK 21 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
       </dependency>
   ```
 
-- Gradle
+- Gradle for JDK 23
 
  ``` 
        testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.7.0'
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'{
 		exclude group: 'net.bytebuddy', module: 'byte-buddy
 	}
-       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.14.16
+       testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.16'
+ ```
+
+- Gradle for JDK 21, 22
+
+ ``` 
+       testImplementation group: 'org.mockito', name: 'mockito-core', version: '5.7.0'
+       testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'{
+		exclude group: 'net.bytebuddy', module: 'byte-buddy
+	}
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.14.9
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.9'
  ```
 
