@@ -148,7 +148,7 @@ For JDK 23 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
       </dependency>
 
       <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
-        We need at least 1.12.9 -->
+        We need at least 1.14.16 -->
       <dependency>
          <groupId>net.bytebuddy</groupId>
          <artifactId>byte-buddy</artifactId>
@@ -181,7 +181,7 @@ For JDK 23 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
       </dependency>
 
       <!-- byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. 
-        We need at least 1.12.9 -->
+        We need at least 1.14.9 -->
       <dependency>
          <groupId>net.bytebuddy</groupId>
          <artifactId>byte-buddy</artifactId>
@@ -197,7 +197,7 @@ For JDK 23 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'{
 		exclude group: 'net.bytebuddy', module: 'byte-buddy
 	}
-       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.14.16
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.16'
  ```
 
@@ -208,7 +208,7 @@ For JDK 23 (recommended mockito version 5.7.0, we need byte-buddy that is equal 
        testImplementation group: 'org.mockito', name: 'mockito-inline', version: '5.2.0'{
 		exclude group: 'net.bytebuddy', module: 'byte-buddy
 	}
-       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.12.9
+       // byte-buddy is an optional dependency. Mockito brings it, but an old version can cause problems. We need at least 1.14.9
        testImplementation group: 'net.bytebuddy', name: 'byte-buddy', version: '1.14.9'
  ```
 
