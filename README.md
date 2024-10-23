@@ -357,7 +357,7 @@ Following steps are required to fix the java version in the project:
 <properties>
     <maven.compiler.source><VERSION></maven.compiler.source>
     <maven.compiler.target><VERSION></maven.compiler.target>
-  </properties>
+</properties>
  ```
 
  
