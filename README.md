@@ -4,9 +4,6 @@
 
 - Website: [https://www.sapient.ai](http://sapient.ai/)
 
-<img alt="SapientAI" width="200" height="auto" src="https://assets-global.website-files.com/644c54b9f870d8f15c27f21a/650a35c8f6932ac72a30ccba_Sapient-Horizontal-1-p-500.png"> <h1>Sapient.ai</h1></img>
-
-
 
 ## Libraries required by Sapient Plugin
 
@@ -354,10 +351,10 @@ Following steps are required to fix the java version in the project:
 
 - Maven
  ```
-<properties>
-    <maven.compiler.source><VERSION></maven.compiler.source>
-    <maven.compiler.target><VERSION></maven.compiler.target>
-  </properties>
+      <properties>
+         <maven.compiler.source><VERSION></maven.compiler.source>
+         <maven.compiler.target><VERSION></maven.compiler.target>
+      </properties>
  ```
 
  
