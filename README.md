@@ -1,19 +1,19 @@
-# Sapient AI
+# BaseRock AI
 
-- Sapient.ai is an advanced AI-driven platform that transforms the landscape of software development through automated unit test generation. Its main features include exceptional code integrity assurance, fast and responsive test generation, and personalized code feedback to improve overall code quality. For software engineers, it expedites the development cycle, enhances code reliability, and offers valuable insights for code refinement.   
+- BaseRock.ai is an advanced AI-driven platform that transforms the landscape of software development through automated unit test generation. Its main features include exceptional code integrity assurance, fast and responsive test generation, and personalized code feedback to improve overall code quality. For software engineers, it expedites the development cycle, enhances code reliability, and offers valuable insights for code refinement.   
 
-- Website: [https://www.sapient.ai](http://sapient.ai/)
+- Website: [https://www.baserock.ai](http://baserock.ai/)
 
 
-## Libraries required by Sapient Plugin
+## Libraries required by BaseRock Plugin
 
-In order to ensure successful test generation, the Sapient Plugin mandates the presence of JUnit, Mockito, and Hamcrest libraries as dependencies in the source project.
+In order to ensure successful test generation, the BaseRock Plugin mandates the presence of JUnit, Mockito, and Hamcrest libraries as dependencies in the source project.
 
 Below are the steps to seamlessly integrate these dependencies into your project:
 
 ## Junit Platform
 
-Sapient facilitates unit test generation across JUnit 5, JUnit 4, or TestNG platforms. The tool automatically identifies the JUnit version by inspecting the unit testing libraries declared in the project. If the project doesn't currently employ any unit testing libraries, it's necessary to include one of these libraries to enable seamless integration with Sapient. If the project contains multiple JUnit libraries (e.g., JUnit 4 and TestNG), users have the option to set their preferred platform in the settings.
+BaseRock facilitates unit test generation across JUnit 5, JUnit 4, or TestNG platforms. The tool automatically identifies the JUnit version by inspecting the unit testing libraries declared in the project. If the project doesn't currently employ any unit testing libraries, it's necessary to include one of these libraries to enable seamless integration with BaseRock. If the project contains multiple JUnit libraries (e.g., JUnit 4 and TestNG), users have the option to set their preferred platform in the settings.
 
 
 
@@ -26,7 +26,7 @@ JUnit Jupiter Engine: The engine that runs tests written using the JUnit Jupiter
 JUnit Vintage Engine: The engine that runs tests written in JUnit 3 and JUnit 4 style.
 
 ## Junit 5 Platform
-Sapient utilizes the JUnit Jupiter programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 5 libraries have been included in the project. Following dependencies can be included for JUnit 5:
+BaseRock utilizes the JUnit Jupiter programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 5 libraries have been included in the project. Following dependencies can be included for JUnit 5:
 
 - Maven 
    
@@ -56,7 +56,7 @@ Sapient utilizes the JUnit Jupiter programming model for test code generation an
  
 ## Junit 4 Platform
 
-Sapient utilizes the JUnit 4 Vintage programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 4 libraries have been included in the project. Following dependencies can be included for JUnit 4:
+BaseRock utilizes the JUnit 4 Vintage programming model for test code generation and employs the respective engine to execute and validate the tests if Junit 4 libraries have been included in the project. Following dependencies can be included for JUnit 4:
 
 - Maven 
    
@@ -77,7 +77,7 @@ Sapient utilizes the JUnit 4 Vintage programming model for test code generation 
 
 ## TestNG Platform
 
-Sapient utilizes the TestNG programming model for test code generation and employs the respective engine to execute and validate the tests if TestNG libraries have been included in the project.
+BaseRock utilizes the TestNG programming model for test code generation and employs the respective engine to execute and validate the tests if TestNG libraries have been included in the project.
 
 For Java version 11 and higher:
 - Maven
@@ -288,7 +288,7 @@ Mockito is a library designed for creating mocks and stubs of objects, enabling 
 
 
 ## Hamcrest Library  
-It brings substantial enhancements in terms of readability, expressiveness, composability, and error message reporting. For a detailed exploration of these advantages, you can refer to our blog post at: [Understanding Hamcrest: Advantages and Disadvantages for Java Testing](https://www.sapient.ai/blog/understanding-hamcrest-advantages-and-disadvantages-for-java-testing).
+It brings substantial enhancements in terms of readability, expressiveness, composability, and error message reporting. For a detailed exploration of these advantages, you can refer to our blog post at: [Understanding Hamcrest: Advantages and Disadvantages for Java Testing](https://www.baserock.ai/blog/understanding-hamcrest-advantages-and-disadvantages-for-java-testing).
 
 - Maven 
    
@@ -311,14 +311,14 @@ It brings substantial enhancements in terms of readability, expressiveness, comp
 
 - Linux
 
-Sapient AI Test Coder requires libgcc and libstdc++6 to be installed on linux before using the plugin. Please make sure these two packages are installed in your machine. For Ubuntu distribution you could install executing the following commands: 
+BaseRock AI Test Coder requires libgcc and libstdc++6 to be installed on linux before using the plugin. Please make sure these two packages are installed in your machine. For Ubuntu distribution you could install executing the following commands: 
  ``` 
        sudo apt install libgcc-s1
        sudo apt install libstdc++6
  ```
 
 ## Java Version Requirement
-Sapient supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
+BaseRock supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
 
 ### Supporting projects with a java version 18 or later
 The current IntelliJ version (2024.1) defaults to boot up with Java 17, which may limit plugins' ability to interpret and process classes generated using Java 18 or later versions. 
@@ -410,7 +410,7 @@ The following Java functions are considered potentially dangerous, and if detect
 	- java.lang.System: exit
 
 ## Batch Generation
-Sapient offers a robust feature enabling the specification of one or multiple source folders for unit test code generation. These folders yield numerous classes, each of which is meticulously analyzed and processed to generate test code. Sapient methodically examines every method within these classes, compiling a comprehensive list of test cases and associating them with their respective test methods. Notably, certain methods, such as main methods for launching applications or getters/setters for data access, are purposefully excluded. This ensures that unit test code generation remains focused on functional code and avoids unnecessary code sprawl.
+BaseRock offers a robust feature enabling the specification of one or multiple source folders for unit test code generation. These folders yield numerous classes, each of which is meticulously analyzed and processed to generate test code. Sapient methodically examines every method within these classes, compiling a comprehensive list of test cases and associating them with their respective test methods. Notably, certain methods, such as main methods for launching applications or getters/setters for data access, are purposefully excluded. This ensures that unit test code generation remains focused on functional code and avoids unnecessary code sprawl.
 
 
 ### Main Method
