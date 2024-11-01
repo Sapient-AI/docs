@@ -410,7 +410,7 @@ The following Java functions are considered potentially dangerous, and if detect
 	- java.lang.System: exit
 
 ## Batch Generation
-BaseRock offers a robust feature enabling the specification of one or multiple source folders for unit test code generation. These folders yield numerous classes, each of which is meticulously analyzed and processed to generate test code. Sapient methodically examines every method within these classes, compiling a comprehensive list of test cases and associating them with their respective test methods. Notably, certain methods, such as main methods for launching applications or getters/setters for data access, are purposefully excluded. This ensures that unit test code generation remains focused on functional code and avoids unnecessary code sprawl.
+BaseRock offers a robust feature enabling the specification of one or multiple source folders for unit test code generation. These folders yield numerous classes, each of which is meticulously analyzed and processed to generate test code. BaseRock methodically examines every method within these classes, compiling a comprehensive list of test cases and associating them with their respective test methods. Notably, certain methods, such as main methods for launching applications or getters/setters for data access, are purposefully excluded. This ensures that unit test code generation remains focused on functional code and avoids unnecessary code sprawl.
 
 
 ### Main Method
