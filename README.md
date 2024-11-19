@@ -307,6 +307,44 @@ It brings substantial enhancements in terms of readability, expressiveness, comp
        testImplementation group: 'org.hamcrest', name: 'hamcrest', version: '2.2'
  ```
 
+## Spring boot Test Library  
+Spring Boot provides a number of utilities and annotations to help when testing your application.
+
+- Maven 
+   
+   ```
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <version>3.3.5</version>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  ```
+  
+- Gradle
+
+ ``` 
+       testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: "org.junit.jupiter", module: "junit-jupiter"
+        exclude group: "org.mockito", module: "mockito-core"
+        exclude group: "org.mockito", module: "mockito-junit-jupiter"
+    }
+ ```
+
 ## OS Libraries
 
 - Linux
