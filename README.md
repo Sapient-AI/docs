@@ -351,9 +351,67 @@ Spring Boot provides a number of utilities and annotations to help when testing 
 
 BaseRock AI Test Coder requires libgcc and libstdc++6 to be installed on linux before using the plugin. Please make sure these two packages are installed in your machine. For Ubuntu distribution you could install executing the following commands: 
  ``` 
-       sudo apt install libgcc-s1
-       sudo apt install libstdc++6
+   sudo apt install libgcc-s1
+   sudo apt install libstdc++6
  ```
+
+## Composable tests
+
+### Running Composable Tests with BaseRock.AI
+
+To execute composable tests, our engine leverages built-in tasks provided by Android projects. To ensure smooth test execution, it's important to verify that your Gradle project is correctly configured.
+
+### Verifying Your Project Configuration
+
+Run the following commands to check if your project is properly configured:
+
+ ``` 
+./gradlew build
+./gradlew :app:connectedDebugAndroidTest
+ ``` 
+
+If these commands execute without errors, your project is ready to run composable tests.
+
+### Test Location
+
+Regular unit tests are generated in the test folder. Composable tests are generated in the androidTest folder.
+
+### Packaging options
+
+When building an Android app, the packaging process merges resources and metadata from all libraries and dependencies into a single APK or AAB file. If multiple libraries include files with the same name and path (such as license files in the META-INF directory), this causes a conflict because the Android packaging system does not allow duplicate files. To resolve this, you need to use packagingOptions in your build.gradle to exclude these duplicate files. This ensures the build process completes successfully without including unnecessary metadata, which is typically not required for your app's runtime functionality.
+
+``` 
+packagingOptions {
+   exclude "META-INF/licenses/**"
+   exclude "META-INF/AL2.0"
+   exclude "META-INF/LGPL2.1"
+   exclude "META-INF/LICENSE.md"
+   exclude "META-INF/LICENSE"
+   exclude "META-INF/NOTICE"
+   exclude "META-INF/*.md"
+   exclude "META-INF/DEPENDENCIE"
+}
+``` 
+
+Please assure you packaging options are fine, so our plugin will be able to execute the tests.
+
+### Enabling Coverage for BaseRock.AI Test Generation
+
+To enable test coverage collection when using BaseRock.AI to generate composable tests, you need to configure your Gradle build file. Specifically, you must enable the testCoverageEnabled property in the debug build type.
+
+Add the following snippet to your build.gradle file:
+
+``` 
+android {
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+    }
+}
+``` 
+
+Once this property is set, BaseRock.AI will collect test coverage data while generating tests, allowing you to measure and optimize your test coverage effectively.
 
 ## Java Version Requirement
 BaseRock supports unit test generation for project using Java Version 8 to 17 without any adjustments. However for Java 18 or later versions, configuring Intellij IDEA is required to boot up with the respective versions, as described below.
