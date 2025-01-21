@@ -380,6 +380,7 @@ Regular unit tests are generated in the test folder. Composable tests are genera
 
 When building an Android app, the packaging process merges resources and metadata from all libraries and dependencies into a single APK or AAB file. If multiple libraries include files with the same name and path (such as license files in the META-INF directory), this causes a conflict because the Android packaging system does not allow duplicate files. To resolve this, you need to use packagingOptions in your build.gradle to exclude these duplicate files. This ensures the build process completes successfully without including unnecessary metadata, which is typically not required for your app's runtime functionality.
 
+<<<<<<< HEAD
 
 #### (AGP < 8.0):
 
@@ -423,6 +424,21 @@ android {
 ``` 
 
 
+=======
+``` 
+packagingOptions {
+   exclude "META-INF/licenses/**"
+   exclude "META-INF/AL2.0"
+   exclude "META-INF/LGPL2.1"
+   exclude "META-INF/LICENSE.md"
+   exclude "META-INF/LICENSE"
+   exclude "META-INF/NOTICE"
+   exclude "META-INF/*.md"
+   exclude "META-INF/DEPENDENCIE"
+}
+``` 
+
+>>>>>>> main
 Please assure you packaging options are fine, so our plugin will be able to execute the tests.
 
 ### Enabling Coverage for BaseRock.AI Test Generation
@@ -431,8 +447,11 @@ To enable test coverage collection when using BaseRock.AI to generate composable
 
 Add the following snippet to your build.gradle file:
 
+<<<<<<< HEAD
 #### (AGP < 8.3):
 
+=======
+>>>>>>> main
 ``` 
 android {
     buildTypes {
@@ -443,6 +462,7 @@ android {
 }
 ``` 
 
+<<<<<<< HEAD
 #### (AGP 8.3 and above):
 ``` 
 android {
@@ -456,6 +476,8 @@ android {
 ``` 
 
 
+=======
+>>>>>>> main
 Once this property is set, BaseRock.AI will collect test coverage data while generating tests, allowing you to measure and optimize your test coverage effectively.
 
 ## Java Version Requirement
